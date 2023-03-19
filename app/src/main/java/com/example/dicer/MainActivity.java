@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button roll;
     private TextView textView;
+    private TextView textView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textView = findViewById(R.id.textView2);
+        textView2 = findViewById(R.id.secondDice);
         roll = findViewById(R.id.buttonRoll);
 
         roll.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 Random random = new Random();
                 int value = random.nextInt(7-1)+1;
                 textView.setText(Integer.toString(value));
+                int value2 = random.nextInt(7-1)+1;
+                textView2.setText(Integer.toString(value2));
             }
         });
 
